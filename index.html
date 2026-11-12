@@ -185,7 +185,8 @@ h1 em{font-style:italic;color:var(--gold)}
 .r-card .row.weak .val{color:var(--weak)}
 .r-card .row.strong .val{color:var(--gold2)}
 .r-card .legend{margin-top:22px;padding-top:14px;border-top:1px solid var(--line);font-size:13px}
-.r-card .legend i{width:3px;height:14px}
+.r-card .legend-note{margin:8px 0 0;font-size:12.5px;line-height:1.5;color:var(--muted)}
+.legend i{width:3px;height:14px}
 /* форма */
 .form{margin-top:22px;display:flex;flex-direction:column;gap:12px}
 .form label{font-size:13px;color:var(--muted);display:flex;flex-direction:column;gap:6px}
@@ -256,7 +257,7 @@ h1 em{font-style:italic;color:var(--gold)}
       <div class="inv-in">
         <div class="byline">Диагностика от <strong class="nw">Марины Семаевой</strong> и <strong>Международного сообщества стилистов</strong></div>
         <div class="stars" aria-hidden="true">✦ ✦ ✦</div>
-        <h1 class="h-hero"><span class="l1">Ты можешь больше.</span><span class="l2">Узнай свою главную точку роста!</span></h1>
+        <h1 class="h-hero"><span class="l1">Ты можешь больше.</span> <span class="l2">Узнай свою главную точку роста!</span></h1>
         <p class="p1">Ты вкладываешь время в развитие, совершенствуешь мастерство, работаешь над собой. Но всегда ли эти усилия приводят к тому уровню востребованности, признания и дохода, которого ты действительно достойна?</p>
         <p class="quote">А что, если для нового профессионального рывка тебе не нужно делать больше — нужно лишь понять, на чём сосредоточиться?</p>
         <div class="label">Пройди диагностику и узнай</div>
@@ -277,12 +278,12 @@ h1 em{font-style:italic;color:var(--gold)}
     <div class="card">
       <div class="kicker">Перед началом</div>
       <h2 class="q" style="margin-bottom:6px">Расскажи немного о себе</h2>
-      <p class="hint">Результат придёт на твою почту, а стаж поможет точнее его посчитать.</p>
+      <p class="hint">Стаж поможет точнее посчитать результат, а на почту ты сможешь получить его копию.</p>
       <div class="form" id="form">
         <label>Как тебя зовут
           <input type="text" id="f-name" autocomplete="given-name" placeholder="Имя">
         </label>
-        <label>E-mail — сюда пришлём результат
+        <label>E-mail — для копии результата
           <input type="email" id="f-email" autocomplete="email" inputmode="email" placeholder="name@mail.ru">
         </label>
         <fieldset class="stage">
@@ -323,7 +324,8 @@ h1 em{font-style:italic;color:var(--gold)}
     <div class="card r-card">
       <div class="kicker">Твой профиль</div>
       <div class="profile" id="profile"></div>
-      <div class="legend"><i></i> ожидаемый уровень для твоего стажа</div>
+      <div class="legend"><i></i> ориентир развития для твоего стажа</div>
+      <p class="legend-note">Это условный ориентир диагностики, а не оценка твоей профессиональной квалификации.</p>
     </div>
 
     <div class="growth solo"><span class="g-lbl">Твоя точка роста</span><span class="g-val" id="r-sub"></span></div>
@@ -354,23 +356,20 @@ h1 em{font-style:italic;color:var(--gold)}
 
     <div class="card r-card offer" id="offer-card" hidden>
       <div class="kicker">Что дальше</div>
-      <h3 class="o-h">Теперь ты знаешь, с чего начать!</h3>
-      <p>Ты уже сделала важный шаг: посмотрела на свою профессиональную ситуацию со стороны, определила главную точку роста и получила первое практическое задание.</p>
-      <p class="o-accent">Но знать, что нужно изменить, и понимать, как именно это сделать, — не одно и то же.</p>
-      <p>Можно продолжать действовать привычным способом, пробовать разные идеи и надеяться, что однажды они приведут к желаемому результату. А можно уже сейчас определить приоритеты и выстроить понятный план профессионального развития.</p>
-      <p>Представь, что в 2027 году ты не просто ставишь перед собой новые цели, а точно знаешь, какие шаги помогут тебе к ним приблизиться.</p>
-      <p class="o-q">Хочешь превратить свою точку роста в реальные изменения и войти в 2027 год с конкретным планом действий?</p>
+      <h3 class="o-h">Ты уже знаешь свою точку роста. Что дальше?</h3>
+      <p>Ты прошла диагностику, увидела, на чём стоит сосредоточиться, и получила первое практическое задание. Теперь у тебя есть отправная точка для профессиональных изменений.</p>
+      <p class="o-accent">Но одно дело — понять, что нужно изменить, и совсем другое — знать, как превратить это в реальные результаты.</p>
+      <p class="o-q">Хочешь войти в 2027 год не просто с новыми целями, а с конкретным планом профессионального роста?</p>
       <button class="btn" type="button" id="yes">Да, хочу! →</button>
       <button class="btn ghost" type="button" id="later">Пока начну с задания</button>
     </div>
 
     <div class="card r-card offer" id="save-card" hidden>
       <div id="save-ask">
-        <div class="kicker">Сохрани результат</div>
-        <h3 class="o-h">Хочешь сохранить свой результат?</h3>
-        <p>Ты уже знаешь свою главную точку роста и получила первое практическое задание. Но к важным выводам полезно возвращаться, особенно когда начинаешь внедрять изменения.</p>
-        <p class="o-q">Отправить тебе результаты диагностики и персональное задание на электронную почту, чтобы они всегда были под рукой?</p>
-        <button class="btn" type="button" id="mail-yes">Конечно! <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M4 7l8 6 8-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="kicker">Копия результата</div>
+        <h3 class="o-h">Хочешь получить копию своего результата и персональное задание на почту?</h3>
+        <p>Мы отправим их на адрес, который ты указала перед диагностикой<span id="save-addr"></span>.</p>
+        <button class="btn" type="button" id="mail-yes">Да, отправить <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M4 7l8 6 8-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
         <button class="btn ghost" type="button" id="mail-no">Нет, спасибо</button>
       </div>
       <div id="save-done" hidden>
@@ -422,7 +421,7 @@ h1 em{font-style:italic;color:var(--gold)}
         <li><b>Получат доступ к специальным ценам</b> до открытия основной регистрации.</li>
       </ul>
       <div class="inv-free"><b>Предзапись бесплатна и ни к чему тебя не обязывает!</b> Ты сможешь спокойно ознакомиться с программой, стоимостью и только потом решить, хочешь ли присоединиться.</div>
-      <button class="btn up" type="button" id="cta">Хочу в анкету предзаписи</button>
+      <button class="btn up" type="button" id="cta">Получить программу и спеццену первой</button>
     </div>
   </section>
 
@@ -816,7 +815,7 @@ const emailOk = v => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v);
 function startTest(){
   const name = $('f-name').value.trim(), email = $('f-email').value.trim(), ok = $('f-ok').checked;
   $('f-email').classList.toggle('bad', !emailOk(email));
-  if (!emailOk(email)) { $('f-err').textContent = 'Проверь e-mail — на него придёт результат.'; $('f-email').focus(); return; }
+  if (!emailOk(email)) { $('f-err').textContent = 'Проверь e-mail — похоже, в нём опечатка.'; $('f-email').focus(); return; }
   if (stage === null) { $('f-stage').classList.add('bad'); $('f-err').textContent = 'Выбери, сколько ты работаешь стилистом.'; return; }
   if (!ok) { $('f-err').textContent = 'Нужно согласие на обработку данных, чтобы отправить результат.'; return; }
   $('f-err').textContent = '';
@@ -834,7 +833,7 @@ $('to-now').onclick = () => show('s-now');
 const reveal = id => { $(id).hidden = false; $(id).scrollIntoView({behavior:'smooth', block:'start'}); };
 $('to-next').addEventListener('click', () => { $('to-next').hidden = true; reveal('offer-card'); track('next_click', {'Нажала «А что дальше?»':'@now'}); });
 $('yes').addEventListener('click', openInvite);
-$('later').addEventListener('click', () => { reveal('save-card'); track('later_click', {'Выбор после «А что дальше?»':'Пока начну с задания'}); });
+$('later').addEventListener('click', () => { $('save-addr').textContent = user.email ? ': ' + user.email : ''; reveal('save-card'); track('later_click', {'Выбор после «А что дальше?»':'Пока начну с задания'}); });
 $('back-now').onclick = () => show('s-now');
 $('cta').addEventListener('click', () => {
   track('preorder_click', {'Открыла анкету предзаписи':'@now'});
