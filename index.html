@@ -139,6 +139,7 @@ h1 em{font-style:italic;color:var(--gold)}
 .btn .ic{width:20px;height:20px;vertical-align:-4px;margin-left:6px}
 /* приглашение на практикум */
 .inv-card .big-h{font-size:32px}
+.offer .o-accent.center{text-align:center;margin:20px auto 4px;max-width:30ch}
 .inv-personal{margin-top:16px;padding:18px;border-radius:16px;background:rgba(213,171,98,.1);border:1px solid rgba(213,171,98,.45)}
 .inv-personal .g-lbl{display:block;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);font-weight:700}
 .inv-personal p{margin:8px 0 0;color:var(--ink)}
@@ -149,6 +150,7 @@ h1 em{font-style:italic;color:var(--gold)}
 .inv-free{margin-top:16px;padding:14px 16px;border-left:3px solid var(--gold);background:var(--card2);border-radius:0 12px 12px 0;font-size:15px}
 .inv-free b{color:var(--ink)}
 .inv-checks{margin-top:12px}
+.inv-final{margin-top:20px!important;color:var(--ink)}
 .inv-checks li b{color:var(--ink)}
 /* анкета предзаписи */
 .pre-name{font-size:28px}
@@ -161,7 +163,10 @@ h1 em{font-style:italic;color:var(--gold)}
 .pre-done{text-align:center}
 .pre-done .stars{color:var(--gold);letter-spacing:8px;font-size:13px}
 .pre-done .o-h{margin-top:12px}
-.pre-done #to-task{margin-top:22px}
+.pre-done #to-task{margin-top:12px}
+.tg-btn{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:20px}
+.tg-btn .ic{margin:0;width:22px;height:22px}
+.pre-done .pre-later{margin-top:22px;padding-top:18px;border-top:1px solid var(--line);color:var(--muted);font-size:15px}
 .btn.ghost{margin-top:10px;background:transparent;color:var(--text);border:1.5px solid var(--line);box-shadow:none;font-weight:600}
 .btn.ghost:hover{border-color:var(--gold)}
 .offer .o-later{margin-top:14px;padding:14px 16px;border-radius:14px;background:var(--card2);color:var(--text);font-size:15px}
@@ -395,33 +400,21 @@ h1 em{font-style:italic;color:var(--gold)}
 
     <div class="card r-card offer inv-card">
       <div class="kicker">Практикум · 2027</div>
-      <h2 class="o-h big-h">А что, если 2027 год действительно станет для тебя прорывным?</h2>
-      <p>Больше интересных клиентов, выше доход, узнаваемость и новые профессиональные возможности…</p>
-      <p class="o-accent">Пусть в этот раз всё это станет не просто планами на Новый год, а реальностью, которую ты начнёшь создавать уже сейчас!</p>
+      <h2 class="o-h big-h">А что, если 2027 год станет для тебя прорывным?</h2>
+      <p>Больше интересных клиентов, выше доход, узнаваемость и новые профессиональные возможности.</p>
+      <p class="o-accent center">Не просто планы на Новый год, а конкретные шаги к их воплощению!</p>
       <p>Ты уже прошла диагностику и узнала свою главную точку роста.</p>
       <div class="inv-personal">
         <span class="g-lbl" id="inv-lbl">Твоя точка роста</span>
         <p id="inv-text"></p>
       </div>
-      <p class="o-q">Теперь самое время превратить это понимание в реальные изменения!</p>
-      <p>Мы готовим особенное предновогоднее событие — практикум</p>
+      <p class="o-q">Пора переходить от понимания к действиям!</p>
+      <p>Приглашаем тебя на особенный предновогодний практикум</p>
       <div class="inv-name">«Стилист 2027: как создать свой новый успех, востребованность и узнаваемость»</div>
-      <p>Это не просто встреча для вдохновения, а возможность по-новому взглянуть на своё профессиональное развитие, найти новые возможности для роста и начать создавать <b class="gold">собственный план действий на первые 90 дней 2027 года</b>.</p>
-      <p>И всё это — в атмосфере живого общения, новых знакомств и предновогоднего настроения.</p>
+      <p>В атмосфере живого общения, новых знакомств и предновогоднего настроения ты сможешь по-новому взглянуть на своё развитие и начать создавать <b class="gold">личный план профессионального роста на первые 90 дней 2027 года</b>.</p>
       <div class="inv-badge"><span class="b-ic">✦ ✦ ✦</span>Формат камерный — количество участников ограничено</div>
-    </div>
-
-    <div class="card r-card offer">
-      <div class="kicker">Предзапись</div>
-      <h3 class="o-h">Хочешь первой узнать подробности и получить специальные условия?</h3>
-      <p>Мы открываем список предзаписи, участники которого:</p>
-      <ul class="checks inv-checks">
-        <li><b>Первыми получат подробную программу практикума.</b></li>
-        <li><b>Первыми узнают все детали и условия участия.</b></li>
-        <li><b>Получат доступ к специальным ценам</b> до открытия основной регистрации.</li>
-      </ul>
-      <div class="inv-free"><b>Предзапись бесплатна и ни к чему тебя не обязывает!</b> Ты сможешь спокойно ознакомиться с программой, стоимостью и только потом решить, хочешь ли присоединиться.</div>
-      <button class="btn up" type="button" id="cta">Получить программу и спеццену первой</button>
+      <p class="inv-final">Запишись в список предзаписи, чтобы первой получить программу и доступ к специальной цене до открытия основной регистрации.</p>
+      <button class="btn up" type="button" id="cta">Получить программу первой</button>
     </div>
   </section>
 
@@ -434,12 +427,13 @@ h1 em{font-style:italic;color:var(--gold)}
       <h2 class="o-h">Ты на шаг ближе к своему новому успеху!</h2>
       <div class="inv-name pre-name">«Стилист 2027: как создать свой новый успех, востребованность и узнаваемость»</div>
       <p>Оставь свои контакты, чтобы первой получить подробную программу практикума, узнать условия участия и получить доступ к специальным ценам до открытия основной регистрации.</p>
+      <div class="inv-free"><b>Предзапись бесплатна и ни к чему тебя не обязывает!</b> Ты сможешь ознакомиться со всеми подробностями и только потом принять решение об участии.</div>
       <div class="form">
         <label><span>Как тебя зовут? <b class="req">*</b></span>
-          <input type="text" id="p-name" required aria-required="true" autocomplete="given-name" placeholder="Имя">
+          <input type="text" id="p-name" required aria-required="true" autocomplete="given-name" placeholder="Твоё имя">
         </label>
         <label><span>Твоя электронная почта <b class="req">*</b></span>
-          <input type="email" id="p-email" required aria-required="true" autocomplete="email" inputmode="email" placeholder="name@mail.ru">
+          <input type="email" id="p-email" required aria-required="true" autocomplete="email" inputmode="email" placeholder="Email">
         </label>
         <label><span>Твой Telegram <span class="opt-l">(необязательно)</span></span>
           <input type="text" id="p-tg" autocomplete="off" placeholder="@username">
@@ -451,16 +445,18 @@ h1 em{font-style:italic;color:var(--gold)}
         <div class="req-note"><b class="req">*</b> — обязательные поля</div>
         <div class="err" id="p-err" role="alert"></div>
         <button class="btn up" type="button" id="p-send">Хочу в список предзаписи</button>
-        <div class="note">Предзапись бесплатна и ни к чему не обязывает. Решение об участии ты примешь позже.</div>
       </div>
     </div>
 
     <div class="card r-card offer pre-done" id="pre-done" hidden>
       <div class="stars">✦ ✦ ✦</div>
       <h2 class="o-h">Отлично! Ты в списке предзаписи! ✨</h2>
-      <p>Теперь ты одной из первых узнаешь подробную программу практикума <b class="gold">«Стилист 2027: как создать свой новый успех, востребованность и узнаваемость»</b> и получишь доступ к специальным условиям участия.</p>
-      <p>Мы сообщим тебе все детали, как только откроем регистрацию.</p>
-      <p class="o-accent">А пока не откладывай своё практическое задание из диагностики. Пусть первые шаги к твоему новому профессиональному уровню начнутся уже сегодня!</p>
+      <p class="o-q">Теперь ты на шаг ближе к своему новому профессиональному уровню!</p>
+      <p>Присоединяйся к нашему Telegram-каналу предзаписи, чтобы быть в числе первых, кто узнает все подробности практикума <b class="gold">«Стилист 2027: как создать свой новый успех, востребованность и узнаваемость»</b>.</p>
+      <p>Именно там мы опубликуем подробную программу, расскажем об условиях участия и откроем доступ к специальным ценам раньше основной регистрации.</p>
+      <p class="o-accent">Будь в числе первых!</p>
+      <a class="btn tg-btn" id="tg-channel" href="#" target="_blank" rel="noopener"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M21.5 4.2 2.9 11.4c-.9.4-.9 1.6.1 1.9l4.6 1.5 1.8 5.6c.2.7 1.1.9 1.6.4l2.6-2.4 4.7 3.5c.6.4 1.4.1 1.6-.6l3.2-15.3c.2-1-.7-1.8-1.6-1.4Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="m7.8 14.6 9.6-6.3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg> Вступить в Telegram-канал предзаписи</a>
+      <p class="pre-later">А пока не откладывай своё практическое задание из диагностики. Пусть первые шаги к твоему новому профессиональному уровню начнутся уже сегодня!</p>
       <button class="btn ghost" type="button" id="to-task">Вернуться к заданию</button>
     </div>
   </section>
@@ -477,6 +473,8 @@ const FALLBACK = "";
 const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzRos33e0XlYfwg0SAPOmcBf6UDvXlyyE7Glodvbgw4zIkXzeTkp6n33XriSf03vWSY/exec";
 /* 3. Ссылка на политику конфиденциальности (пусто — ссылка не показывается). */
 const POLICY_URL = "";
+/* Ссылка на Telegram-канал предзаписи (кнопка на экране «Ты в списке предзаписи»), например "https://t.me/stylist2027" */
+const TG_CHANNEL = "";
 /* =============================================== */
 
 const BLOCKS = [
@@ -584,7 +582,7 @@ const R = {
   now:"Сейчас тебе важно перестать воспринимать создание контента как отдельную задачу, которую нужно выполнять ради активности в социальных сетях. Каждая публикация может помогать потенциальному клиенту лучше понимать твой подход, видеть профессиональную ценность и постепенно формировать доверие. Для этого необязательно постоянно придумывать что-то новое или публиковать материалы каждый день. Начни с определения нескольких основных тем, которые отражают твою специализацию, интересы и сильные стороны. Подумай, что именно ты хочешь донести до аудитории и какое впечатление должно складываться о тебе как о специалисте. **Твоя задача — создать понятную систему контента, которая будет не просто привлекать внимание, а последовательно работать на твою узнаваемость, доверие и востребованность.**",
   task:"### Найди темы, которые раскрывают твою экспертность\n\nИногда кажется, что для интересного контента нужно постоянно искать новые идеи. Но самые сильные темы часто находятся гораздо ближе — в твоём опыте, профессиональных наблюдениях и вопросах, с которыми к тебе обращаются клиенты.\n\n**Попробуй создать основу своего будущего контент-плана.**\n\nВыбери три темы, в которых ты особенно хорошо разбираешься и о которых тебе действительно интересно рассказывать.\n\nПод каждой темой запиши по три идеи для публикаций.\n\nНе думай пока о форматах, алгоритмах и количестве просмотров. Сосредоточься на том, какую пользу ты можешь дать аудитории и что твои публикации расскажут о тебе как о специалисте.\n\nВ результате у тебя появятся девять идей для контента, основанных на твоей собственной экспертности, а не на случайном вдохновении.",
   mk:"Выберем твои основные темы на 2027 год, реалистичный ритм публикаций и 5 приёмов контента, которые делают стилиста узнаваемым.",
-  inv:"Твоя точка роста — превратить контент в системный инструмент продвижения, который раскрывает твою экспертность, формирует доверие и помогает привлекать клиентов."}
+  inv:"Твоя точка роста — превратить контент в системный инструмент продвижения, который раскрывает твою экспертность и помогает привлекать клиентов."}
 };
 
 const $ = id => document.getElementById(id);
@@ -845,6 +843,11 @@ $('cta').addEventListener('click', () => {
 $('back-inv').onclick = () => show('s-inv');
 $('to-task').onclick = () => { show('s-now'); setTimeout(() => $('r-task').closest('.card').scrollIntoView({behavior:'smooth', block:'start'}), 50); };
 $('p-send').addEventListener('click', sendPreorder);
+$('tg-channel').href = TG_CHANNEL || '#';
+$('tg-channel').addEventListener('click', e => {
+  if (!TG_CHANNEL) { e.preventDefault(); return; }
+  track('channel_click', {'Перешла в Telegram-канал':'@now'});
+});
 if (POLICY_URL) $('p-policy').href = POLICY_URL; else $('p-policy-wrap').hidden = true;
 $('mail-yes').addEventListener('click', () => {
   if (lastData) post({...lastData, action:'mail', event:'mail_yes', cols:{'Письмо с результатом':'запросила'}});
