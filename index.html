@@ -145,6 +145,7 @@ h1 em{font-style:italic;color:var(--gold)}
 .btn .ic{width:20px;height:20px;vertical-align:-4px;margin-left:6px}
 /* приглашение на практикум */
 .inv-card .big-h{font-size:32px}
+.offer .small-h{font-size:24px}
 .offer .o-accent.center{text-align:center;margin:20px 0 4px;text-wrap:pretty}
 .inv-personal{margin-top:16px;padding:18px;border-radius:16px;background:rgba(213,171,98,.1);border:1px solid rgba(213,171,98,.45)}
 .inv-personal .g-lbl{display:block;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);font-weight:700}
@@ -363,6 +364,23 @@ h1 em{font-style:italic;color:var(--gold)}
       <div class="task" id="r-task"></div>
     </div>
 
+    <div class="card r-card offer" id="save-card">
+      <div id="save-ask">
+        <div class="kicker">Копия результата</div>
+        <h3 class="o-h small-h">Хочешь получить копию своего результата и персональное задание на почту?</h3>
+        <p>Мы отправим их на адрес, который ты указала перед диагностикой<span id="save-addr"></span>.</p>
+        <button class="btn" type="button" id="mail-yes">Да, отправить <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M4 7l8 6 8-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <button class="btn ghost" type="button" id="mail-no">Нет, спасибо</button>
+      </div>
+      <div id="save-done" hidden>
+        <div class="kicker">Письмо отправлено</div>
+        <h3 class="o-h small-h">Готово! Твои результаты отправлены на почту.</h3>
+        <p id="save-to"></p>
+        <p>Теперь ты сможешь в любой момент вернуться к своей точке роста, рекомендациям и практическому заданию.</p>
+        <p class="o-accent">Пусть это станет первым шагом к новым профессиональным достижениям в 2027 году!</p>
+      </div>
+    </div>
+
     <button class="btn" type="button" id="to-next">А что дальше? →</button>
 
     <div class="card r-card offer" id="offer-card" hidden>
@@ -375,28 +393,13 @@ h1 em{font-style:italic;color:var(--gold)}
       <button class="btn ghost" type="button" id="later">Пока начну с задания</button>
     </div>
 
-    <div class="card r-card offer" id="save-card" hidden>
-      <div id="save-ask">
-        <div class="kicker">Копия результата</div>
-        <h3 class="o-h">Хочешь получить копию своего результата и персональное задание на почту?</h3>
-        <p>Мы отправим их на адрес, который ты указала перед диагностикой<span id="save-addr"></span>.</p>
-        <button class="btn" type="button" id="mail-yes">Да, отправить <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M4 7l8 6 8-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-        <button class="btn ghost" type="button" id="mail-no">Нет, спасибо</button>
-      </div>
-      <div id="save-done" hidden>
-        <div class="kicker">Письмо отправлено</div>
-        <h3 class="o-h">Готово! Твои результаты отправлены на почту.</h3>
-        <p id="save-to"></p>
-        <p>Теперь ты сможешь в любой момент вернуться к своей точке роста, рекомендациям и практическому заданию.</p>
-        <p class="o-accent">Пусть это станет первым шагом к новым профессиональным достижениям в 2027 году!</p>
-      </div>
-      <div id="save-no" hidden>
+    <div class="card r-card offer" id="bye-card" hidden>
         <div class="kicker">До встречи</div>
         <h3 class="o-h">Пусть 2027 год станет годом твоего профессионального роста!</h3>
         <p>У тебя уже есть главное — понимание, на чём стоит сосредоточиться. Не откладывай своё задание надолго: иногда даже небольшое действие становится началом больших перемен.</p>
         <p class="o-accent">Желаем тебе вдохновения, смелых решений и новых профессиональных возможностей!</p>
-      </div>
     </div>
+
 
   </section>
 
@@ -418,6 +421,7 @@ h1 em{font-style:italic;color:var(--gold)}
       <div class="inv-badge"><span class="b-ic">✦ ✦ ✦</span>Формат камерный — количество участников ограничено</div>
       <button class="btn up" type="button" id="cta">Получить программу первой</button>
     </div>
+
   </section>
 
   <!-- Анкета предзаписи -->
@@ -459,20 +463,6 @@ h1 em{font-style:italic;color:var(--gold)}
       <a class="btn tg-btn" id="tg-channel" href="#" target="_blank" rel="noopener"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M21.5 4.2 2.9 11.4c-.9.4-.9 1.6.1 1.9l4.6 1.5 1.8 5.6c.2.7 1.1.9 1.6.4l2.6-2.4 4.7 3.5c.6.4 1.4.1 1.6-.6l3.2-15.3c.2-1-.7-1.8-1.6-1.4Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="m7.8 14.6 9.6-6.3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg> Вступить в Telegram-канал</a>
     </div>
 
-    <div class="card r-card offer" id="mail2-card" hidden>
-      <div id="mail2-ask">
-        <div class="kicker">Копия результата</div>
-        <h3 class="o-h">Отправить тебе результат диагностики и персональное задание на почту?</h3>
-        <p>Мы отправим их на адрес<span id="mail2-addr"></span>, чтобы они всегда были под рукой.</p>
-        <button class="btn" type="button" id="mail2-yes">Да, отправить <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M4 7l8 6 8-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-        <button class="btn ghost" type="button" id="mail2-no">Нет, спасибо</button>
-      </div>
-      <div id="mail2-done" hidden>
-        <div class="kicker">Письмо отправлено</div>
-        <h3 class="o-h">Готово! Результат и задание отправлены на почту.</h3>
-        <p id="mail2-to"></p>
-      </div>
-    </div>
   </section>
 
 </main>
@@ -750,7 +740,6 @@ function sendPreorder(){
     cols:{'Предзапись':'@now', 'Предзапись: имя':name, 'Предзапись: e-mail':email, 'Предзапись: Telegram': tg ? '@' + tg : '', 'Согласие на рассылку':'да'}
   });
   $('pre-form').hidden = true; $('pre-done').hidden = false; window.scrollTo(0, 0);
-  if (!mailSent) { $('mail2-addr').textContent = ' ' + email; $('mail2-card').hidden = false; $('mail2-ask').hidden = false; $('mail2-done').hidden = true; }
 }
 
 /* ---------- приглашение на практикум ---------- */
@@ -780,8 +769,10 @@ function finish(){
   renderDesc(r.x);
   renderMd($('r-now'), r.now, {p:'big', call:'now-task'});
   renderTask(r.task);
-  mailSent = false; $('mail2-card').hidden = true;
-  $('offer-card').hidden = true; $('to-next').hidden = false; $('save-card').hidden = true; $('save-ask').hidden = false; $('save-done').hidden = true; $('save-no').hidden = true;
+  mailSent = false;
+  $('offer-card').hidden = true; $('bye-card').hidden = true; $('to-next').hidden = false;
+  $('save-card').hidden = false; $('save-ask').hidden = false; $('save-done').hidden = true;
+  $('save-addr').textContent = user.email ? ': ' + user.email : '';
 
   const weakIdx = ['pos','vis','dem','inc','con'].indexOf(c.key);
   const p = $('profile'); p.innerHTML = '';
@@ -854,7 +845,7 @@ $('to-now').onclick = () => show('s-now');
 const reveal = id => { $(id).hidden = false; $(id).scrollIntoView({behavior:'smooth', block:'start'}); };
 $('to-next').addEventListener('click', () => { $('to-next').hidden = true; reveal('offer-card'); track('next_click', {'Нажала «А что дальше?»':'@now'}); });
 $('yes').addEventListener('click', openInvite);
-$('later').addEventListener('click', () => { $('save-addr').textContent = user.email ? ': ' + user.email : ''; reveal('save-card'); track('later_click', {'Выбор после «А что дальше?»':'Пока начну с задания'}); });
+$('later').addEventListener('click', () => { reveal('bye-card'); track('later_click', {'Выбор после «А что дальше?»':'Пока начну с задания'}); });
 $('back-now').onclick = () => show('s-now');
 $('cta').addEventListener('click', () => {
   track('preorder_click', {'Открыла анкету предзаписи':'@now'});
@@ -876,24 +867,14 @@ function sendResultMail(to){
   if (mailSent) return; mailSent = true;
   if (lastData) post({...lastData, email:to || lastData.email, action:'mail', event:'mail_yes', cols:{'Письмо с результатом':'запросила'}});
 }
-$('mail2-yes').addEventListener('click', () => {
-  const to = $('p-email').value.trim() || user.email;
-  sendResultMail(to);
-  $('mail2-to').textContent = 'Письмо придёт на ' + to + '. Если не увидишь его в течение нескольких минут, загляни в «Спам» или «Промоакции».';
-  $('mail2-ask').hidden = true; $('mail2-done').hidden = false;
-});
-$('mail2-no').addEventListener('click', () => {
-  track('mail_no', {'Письмо с результатом':'Нет, спасибо'});
-  $('mail2-card').hidden = true;
-});
 $('mail-yes').addEventListener('click', () => {
   sendResultMail(user.email);
   $('save-to').textContent = user.email ? 'Письмо придёт на ' + user.email + '. Если не увидишь его в течение нескольких минут, загляни в «Спам» или «Промоакции».' : '';
-  $('save-ask').hidden = true; $('save-done').hidden = false; $('save-no').hidden = true;
+  $('save-ask').hidden = true; $('save-done').hidden = false;
 });
 $('mail-no').addEventListener('click', () => {
   track('mail_no', {'Письмо с результатом':'Нет, спасибо'});
-  $('save-ask').hidden = true; $('save-no').hidden = false; $('save-done').hidden = true;
+  $('save-card').hidden = true;
 });
 $('back-res').onclick = () => show('s-res');
 $('back').onclick = () => { if (step > 0){ step--; render(); window.scrollTo(0,0); } };
