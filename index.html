@@ -146,6 +146,13 @@ h1 em{font-style:italic;color:var(--gold)}
 /* приглашение на практикум */
 .inv-card .big-h{font-size:32px}
 .offer .small-h{font-size:24px}
+.pre-done .pd-mail{margin-top:26px;padding-top:22px;border-top:1px solid var(--line);text-align:center}
+.pre-done .pd-mail .btn.ghost{margin-top:12px}
+.pre-done .pd-mail .pd-no{margin-top:8px;border-color:transparent;color:var(--muted);font-weight:500}
+.pre-done .bye-done{margin-top:20px;text-align:left}
+.offer .bye-addr{color:var(--muted);font-size:14.5px}
+.offer .bye-done{margin-top:14px;padding:14px 16px;border-radius:14px;background:rgba(213,171,98,.1);border:1px solid rgba(213,171,98,.45);color:var(--ink);font-size:15px}
+.offer .bye-end{margin-top:22px!important;padding-top:18px;border-top:1px solid var(--line);text-align:center}
 .offer .o-accent.center{text-align:center;margin:20px 0 4px;text-wrap:pretty}
 .inv-personal{margin-top:16px;padding:18px;border-radius:16px;background:rgba(213,171,98,.1);border:1px solid rgba(213,171,98,.45)}
 .inv-personal .g-lbl{display:block;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);font-weight:700}
@@ -157,7 +164,13 @@ h1 em{font-style:italic;color:var(--gold)}
 .inv-free{margin-top:16px;padding:14px 16px;border-left:3px solid var(--gold);background:var(--card2);border-radius:0 12px 12px 0;font-size:15px}
 .inv-free b{color:var(--ink)}
 .inv-checks{margin-top:12px}
-.inv-final{margin-top:20px!important;color:var(--ink);text-align:center}
+.inv-final{margin-top:18px!important;color:var(--muted);text-align:center;font-size:15px}
+.inv-author{margin-top:22px;padding:18px;border-radius:20px;background:linear-gradient(160deg,rgba(213,171,98,.16),rgba(213,171,98,.04) 60%),var(--card2);border:1px solid rgba(213,171,98,.55)}
+.inv-author .ia-row{display:flex;align-items:center;gap:16px}
+.inv-author img{flex:none;width:96px;height:96px;border-radius:50%;object-fit:cover;border:2px solid var(--gold);box-shadow:0 0 0 4px rgba(213,171,98,.15)}
+.inv-author p{margin:0!important;color:var(--ink)}
+.inv-author .ia-name{margin-top:16px;padding-top:16px;border-top:1px solid rgba(213,171,98,.35);font-family:'Cormorant Garamond',Georgia,serif;font-size:30px;line-height:1.12;font-weight:700;color:#e8434f;text-wrap:balance}
+@media (min-width:520px){.inv-author img{width:120px;height:120px}.inv-author .ia-name{font-size:34px}}
 .inv-checks li b{color:var(--ink)}
 /* анкета предзаписи */
 .pre-name{font-size:28px}
@@ -364,7 +377,7 @@ h1 em{font-style:italic;color:var(--gold)}
       <div class="task" id="r-task"></div>
     </div>
 
-    <div class="card r-card offer" id="save-card">
+    <div class="card r-card offer" id="save-card" hidden>
       <div id="save-ask">
         <div class="kicker">Копия результата</div>
         <h3 class="o-h small-h">Хочешь получить копию своего результата и персональное задание на почту?</h3>
@@ -383,22 +396,7 @@ h1 em{font-style:italic;color:var(--gold)}
 
     <button class="btn" type="button" id="to-next">А что дальше? →</button>
 
-    <div class="card r-card offer" id="offer-card" hidden>
-      <div class="kicker">Что дальше</div>
-      <h3 class="o-h">Ты уже знаешь свою точку роста. Что дальше?</h3>
-      <p>Ты прошла диагностику, получила рекомендации и первое практическое задание.</p>
-      <p class="o-accent">А теперь представь, что в 2027 году у тебя будет не просто список целей, а конкретный план профессионального роста.</p>
-      <p class="o-q">Готова сделать следующий шаг?</p>
-      <button class="btn" type="button" id="yes">Да, хочу! →</button>
-      <button class="btn ghost" type="button" id="later">Пока начну с задания</button>
-    </div>
 
-    <div class="card r-card offer" id="bye-card" hidden>
-        <div class="kicker">До встречи</div>
-        <h3 class="o-h">Пусть 2027 год станет годом твоего профессионального роста!</h3>
-        <p>У тебя уже есть главное — понимание, на чём стоит сосредоточиться. Не откладывай своё задание надолго: иногда даже небольшое действие становится началом больших перемен.</p>
-        <p class="o-accent">Желаем тебе вдохновения, смелых решений и новых профессиональных возможностей!</p>
-    </div>
 
 
   </section>
@@ -408,20 +406,39 @@ h1 em{font-style:italic;color:var(--gold)}
     <div class="top"><button class="back" id="back-now">← Назад</button><span></span></div>
 
     <div class="card r-card offer inv-card">
-      <div class="kicker">Практикум · 2027</div>
+      <div class="kicker">Твой следующий шаг · 2027</div>
       <h2 class="o-h big-h">А что, если 2027 год станет для тебя прорывным?</h2>
       <p>Больше интересных клиентов, выше доход, узнаваемость и новые профессиональные возможности!</p>
       <div class="inv-personal">
         <span class="g-lbl" id="inv-lbl">Твоя точка роста</span>
         <p id="inv-text"></p>
       </div>
-      <p>Приглашаем тебя на особенный предновогодний практикум</p>
-      <div class="inv-name">«Стилист 2027: как создать свой новый успех, востребованность и узнаваемость»</div>
-      <p>В атмосфере живого общения и новых знакомств ты начнёшь создавать <b class="gold">свой план профессионального роста на первые 90 дней 2027 года</b>.</p>
+      <p>Теперь ты знаешь, на чём стоит сосредоточиться. <b class="gold">Самое время превратить это понимание в конкретный план действий!</b></p>
+      <div class="inv-author">
+        <div class="ia-row">
+          <img src="data:image/jpeg;base64,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" alt="Марина Семаева" width="120" height="120">
+          <p>Именно для этого я, <b class="gold">Марина Семаева</b>, приглашаю тебя на особенный предновогодний практикум</p>
+        </div>
+        <div class="ia-name">«Стилист 2027: как создать свой новый успех, востребованность и узнаваемость»</div>
+      </div>
+      <p>Мы встретимся лично, чтобы в атмосфере живого общения, новых знакомств и предновогоднего настроения начать создавать <b class="gold">твой план профессионального роста на первые 90 дней 2027 года</b>.</p>
       <div class="inv-badge"><span class="b-ic">✦ ✦ ✦</span>Формат камерный — количество участников ограничено</div>
+      <p class="inv-final">Запишись, чтобы первой получить программу практикума и доступ к специальной цене до открытия основной регистрации.</p>
       <button class="btn up" type="button" id="cta">Получить программу первой</button>
+      <button class="btn ghost" type="button" id="later">Пока начну с задания</button>
     </div>
 
+    <div class="card r-card offer" id="bye-card" hidden>
+      <div class="kicker">Твой результат</div>
+      <h3 class="o-h small-h">Хочешь сохранить свой результат диагностики?</h3>
+      <div id="bye-ask">
+        <p>Мы можем отправить твой результат и персональное задание на электронную почту, чтобы ты могла вернуться к ним в любой момент.</p>
+        <button class="btn" type="button" id="bye-yes">Да, отправить на почту <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M4 7l8 6 8-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <button class="btn ghost" type="button" id="bye-no">Нет, спасибо</button>
+      </div>
+      <div class="bye-done" id="bye-done" hidden></div>
+      <p class="o-accent bye-end">Пусть 2027 год станет годом твоего профессионального роста, смелых решений и новых возможностей!</p>
+    </div>
   </section>
 
   <!-- Анкета предзаписи -->
@@ -457,10 +474,21 @@ h1 em{font-style:italic;color:var(--gold)}
     <div class="card r-card offer pre-done" id="pre-done" hidden>
       <div class="stars">✦ ✦ ✦</div>
       <h2 class="o-h">Отлично! Ты в списке предзаписи! ✨</h2>
-      <p class="o-q">Остался один шаг — вступить в Telegram-канал предзаписи!</p>
+      <p class="o-q">Остался один шаг — присоединиться к Telegram-каналу предзаписи!</p>
       <p>Именно там ты первой узнаешь программу практикума <b class="gold">«Стилист 2027»</b>, все подробности участия и получишь доступ к специальным ценам до открытия основной регистрации.</p>
       <p class="o-accent">Будь в числе первых!</p>
       <a class="btn tg-btn" id="tg-channel" href="#" target="_blank" rel="noopener"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M21.5 4.2 2.9 11.4c-.9.4-.9 1.6.1 1.9l4.6 1.5 1.8 5.6c.2.7 1.1.9 1.6.4l2.6-2.4 4.7 3.5c.6.4 1.4.1 1.6-.6l3.2-15.3c.2-1-.7-1.8-1.6-1.4Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="m7.8 14.6 9.6-6.3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg> Вступить в Telegram-канал</a>
+    </div>
+
+    <div class="card r-card offer" id="pd-card" hidden>
+      <div class="kicker">Твой результат</div>
+      <h3 class="o-h small-h">Хочешь сохранить свой результат диагностики?</h3>
+      <div id="pd-ask">
+        <p>Мы можем отправить твой результат и персональное задание на электронную почту, чтобы ты могла вернуться к ним в любой момент.</p>
+        <button class="btn" type="button" id="pd-yes">Да, отправить на почту <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M4 7l8 6 8-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <button class="btn ghost" type="button" id="pd-no">Нет, спасибо</button>
+      </div>
+      <div class="bye-done" id="pd-done" hidden></div>
     </div>
 
   </section>
@@ -478,7 +506,9 @@ const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzRos33e0XlYfwg0SAPO
 /* 3. Ссылка на политику конфиденциальности (пусто — ссылка не показывается). */
 const POLICY_URL = "";
 /* Ссылка на Telegram-канал предзаписи (кнопка на экране «Ты в списке предзаписи»), например "https://t.me/stylist2027" */
-const TG_CHANNEL = "";
+const TG_CHANNEL = "https://t.me/+6oLImVZ2KN9hNmNi";
+/* Блок «Хочешь получить копию результата на почту?» после задания: true — показывать, false — скрыт */
+const SHOW_MAIL_OFFER = false;
 /* =============================================== */
 
 const BLOCKS = [
@@ -740,6 +770,7 @@ function sendPreorder(){
     cols:{'Предзапись':'@now', 'Предзапись: имя':name, 'Предзапись: e-mail':email, 'Предзапись: Telegram': tg ? '@' + tg : '', 'Согласие на рассылку':'да'}
   });
   $('pre-form').hidden = true; $('pre-done').hidden = false; window.scrollTo(0, 0);
+  $('pd-card').hidden = mailSent; $('pd-ask').hidden = false; $('pd-done').hidden = true;
 }
 
 /* ---------- приглашение на практикум ---------- */
@@ -752,8 +783,9 @@ function openInvite(){
   $('inv-lbl').textContent = r ? 'Твой результат — «' + r.t + '»' : 'Твоя точка роста';
   const link = current ? (current.link || LINKS[current.key] || FALLBACK) : FALLBACK;
   if (current) current.link = link;
+  $('bye-card').hidden = true; $('bye-ask').hidden = mailSent; $('bye-done').hidden = true;
   show('s-inv');
-  track('invite_open', {'Выбор после «А что дальше?»':'Да, хочу!', 'Открыла приглашение':'@now'});
+  track('invite_open', {'Открыла приглашение':'@now'});
 }
 /* аналитика: открытие приглашения и клик по предзаписи (итоговый результат пишется при завершении теста) */
 function track(event, cols){
@@ -769,9 +801,9 @@ function finish(){
   renderDesc(r.x);
   renderMd($('r-now'), r.now, {p:'big', call:'now-task'});
   renderTask(r.task);
-  mailSent = false;
-  $('offer-card').hidden = true; $('bye-card').hidden = true; $('to-next').hidden = false;
-  $('save-card').hidden = false; $('save-ask').hidden = false; $('save-done').hidden = true;
+  mailSent = false; $('pd-card').hidden = true;
+  $('to-next').hidden = false;
+  $('save-card').hidden = !SHOW_MAIL_OFFER; $('save-ask').hidden = false; $('save-done').hidden = true;
   $('save-addr').textContent = user.email ? ': ' + user.email : '';
 
   const weakIdx = ['pos','vis','dem','inc','con'].indexOf(c.key);
@@ -843,12 +875,11 @@ const toForm = () => { show('s-form'); setTimeout(() => $('f-name').focus(), 350
 $('go').onclick = $('bn').onclick = toForm;
 $('to-now').onclick = () => show('s-now');
 const reveal = id => { $(id).hidden = false; $(id).scrollIntoView({behavior:'smooth', block:'start'}); };
-$('to-next').addEventListener('click', () => { $('to-next').hidden = true; reveal('offer-card'); track('next_click', {'Нажала «А что дальше?»':'@now'}); });
-$('yes').addEventListener('click', openInvite);
-$('later').addEventListener('click', () => { reveal('bye-card'); track('later_click', {'Выбор после «А что дальше?»':'Пока начну с задания'}); });
+$('to-next').addEventListener('click', () => { track('next_click', {'Нажала «А что дальше?»':'@now'}); openInvite(); });
+$('later').addEventListener('click', () => { reveal('bye-card'); track('later_click', {'Выбор на приглашении':'Пока начну с задания'}); });
 $('back-now').onclick = () => show('s-now');
 $('cta').addEventListener('click', () => {
-  track('preorder_click', {'Открыла анкету предзаписи':'@now'});
+  track('preorder_click', {'Выбор на приглашении':'Получить программу первой', 'Открыла анкету предзаписи':'@now'});
   if (!$('p-name').value) $('p-name').value = user.name || '';
   if (!$('p-email').value) $('p-email').value = user.email || '';
   $('pre-form').hidden = false; $('pre-done').hidden = true; $('p-err').textContent = '';
@@ -867,6 +898,25 @@ function sendResultMail(to){
   if (mailSent) return; mailSent = true;
   if (lastData) post({...lastData, email:to || lastData.email, action:'mail', event:'mail_yes', cols:{'Письмо с результатом':'запросила'}});
 }
+$('pd-yes').addEventListener('click', () => {
+  const to = $('p-email').value.trim() || user.email;
+  sendResultMail(to);
+  $('pd-ask').hidden = true; $('pd-done').hidden = false;
+  $('pd-done').textContent = 'Готово! Письмо придёт на ' + to + '. Если не увидишь его в течение нескольких минут, загляни в «Спам» или «Промоакции».';
+});
+$('pd-no').addEventListener('click', () => {
+  track('mail_no', {'Письмо с результатом':'Нет, спасибо'});
+  $('pd-card').hidden = true;
+});
+$('bye-yes').addEventListener('click', () => {
+  sendResultMail(user.email);
+  $('bye-ask').hidden = true; $('bye-done').hidden = false;
+  $('bye-done').textContent = 'Готово! Письмо придёт на ' + user.email + '. Если не увидишь его в течение нескольких минут, загляни в «Спам» или «Промоакции».';
+});
+$('bye-no').addEventListener('click', () => {
+  track('mail_no', {'Письмо с результатом':'Нет, спасибо'});
+  $('bye-ask').hidden = true;
+});
 $('mail-yes').addEventListener('click', () => {
   sendResultMail(user.email);
   $('save-to').textContent = user.email ? 'Письмо придёт на ' + user.email + '. Если не увидишь его в течение нескольких минут, загляни в «Спам» или «Промоакции».' : '';
