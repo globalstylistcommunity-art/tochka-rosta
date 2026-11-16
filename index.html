@@ -841,10 +841,24 @@ function finish(){
 /* отправка в Google-таблицу / на почту */
 let lastData = null;
 let sid = '';   // ID прохождения: все действия участницы пишутся в одну строку таблицы
+/* откуда пришла участница: метки из ссылки (utm_*) и ID получателя письма (eid) */
+const SRC = (() => {
+  let s = {};
+  try { s = JSON.parse(localStorage.getItem('stylist2027_src')) || {}; } catch(e) {}
+  const q = new URLSearchParams(location.search);
+  if (q.get('utm_source') || q.get('eid')) {
+    s = {source:q.get('utm_source') || '', campaign:q.get('utm_campaign') || '', content:q.get('utm_content') || '', eid:q.get('eid') || ''};
+    try { localStorage.setItem('stylist2027_src', JSON.stringify(s)); } catch(e) {}
+    s.fresh = true;
+  }
+  return s;
+})();
+const srcCols = () => SRC.source || SRC.eid ? {'Источник':SRC.source || 'email', 'Кампания':SRC.campaign || '', 'Ссылка в письме':SRC.content || '', 'ID получателя':SRC.eid || ''} : {};
 function post(data){
   if (!SCRIPT_URL) return;
-  fetch(SCRIPT_URL, {method:'POST', mode:'no-cors', headers:{'Content-Type':'text/plain;charset=utf-8'}, body:JSON.stringify({sid:sid, ...data})}).catch(() => {});
+  fetch(SCRIPT_URL, {method:'POST', mode:'no-cors', headers:{'Content-Type':'text/plain;charset=utf-8'}, body:JSON.stringify({sid:sid, eid:SRC.eid || '', campaign:SRC.campaign || '', ...data})}).catch(() => {});
 }
+if (SRC.fresh && SRC.eid) post({action:'event', event:'email_click'});   // переход из письма
 const qHead = k => (k + 1) + '. ' + Q[k][1];
 const answerCols = () => { const o = {}; Q.forEach((q, k) => { if (answers[k] !== null) o[qHead(k)] = q[2][answers[k]]; }); return o; };
 
@@ -866,7 +880,7 @@ function startTest(){
   user = {name, email};
   sid = Date.now().toString(36) + '-' + Math.random().toString(36).slice(2, 7);
   post({action:'start', event:'start', name:name, email:email, cols:{
-    'Имя':name, 'E-mail':email, 'Стаж':STAGES[stage].label, 'Согласие на обработку данных':'да', 'Дошла до вопроса':'1 из ' + TOTAL }});
+    'Имя':name, 'E-mail':email, 'Стаж':STAGES[stage].label, 'Согласие на обработку данных':'да', 'Дошла до вопроса':'1 из ' + TOTAL, ...srcCols() }});
   step = 0; render(); show('s-q');
 }
 $('start').onclick = startTest;
